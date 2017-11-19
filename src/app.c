@@ -22,13 +22,6 @@ int main() {
     char temp1, temp2, temp3;
     FILE * fp;
 
-    //white -  ascii 87 - 0
-    //red - ascii 82 - 1
-    //blue - ascii 66 - 2
-    //orange - ascii 79 - 3
-    //green - ascii 71 - 4
-    //yellow -ascii 89 - 5
-
     fp = fopen("../res/input.txt", "r");
 
 
@@ -173,10 +166,3 @@ int main() {
 
 
 }
-
-//white -  ascii 87 
-//red - ascii 82
-//blue - ascii 66
-//orange - ascii 79
-//green - ascii 71
-//yellow -ascii 89
