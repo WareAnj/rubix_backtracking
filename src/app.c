@@ -29,7 +29,7 @@ int main() {
     //green - ascii 71 - 4
     //yellow -ascii 89 - 5
 
-    fp = fopen("input.txt", "r");
+    fp = fopen("../res/input.txt", "r");
 
 
     while (!feof(fp)) {
