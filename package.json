@@ -1,0 +1,20 @@
+{
+  "name": "rubix_project",
+  "version": "1.0.0",
+  "description": "A CMSC 142 Project",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sh app.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WareAnj/rubix_backtracking.git"
+  },
+  "author": "[Menguito, Milano, Ware]",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WareAnj/rubix_backtracking/issues"
+  },
+  "homepage": "https://github.com/WareAnj/rubix_backtracking#readme"
+}
