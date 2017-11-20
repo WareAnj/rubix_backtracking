@@ -63,10 +63,7 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[2][0][0] = temp[0];
                 cube[2][1][0] = temp[1];
                 cube[2][2][0] = temp[2];
-
-
             } else {
-
                 temp[0] = cube[0][0][0];
                 temp[1] = cube[0][1][0];
                 temp[2] = cube[0][2][0];
@@ -86,13 +83,11 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[4][0][2] = temp[0];
                 cube[4][1][2] = temp[1];
                 cube[4][2][2] = temp[2];
-
             }
 
             break;
 
         case 2:
-
             if (strcmp(dir, "CLOCKWISE") == 0) {
                 temp[0] = cube[0][2][0];
                 temp[1] = cube[0][2][1];
@@ -113,10 +108,7 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[3][0][0] = temp[0];
                 cube[3][1][0] = temp[1];
                 cube[3][2][0] = temp[2];
-
-
             } else {
-
                 temp[0] = cube[3][0][0];
                 temp[1] = cube[3][1][0];
                 temp[2] = cube[3][2][0];
@@ -136,7 +128,6 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[0][2][0] = temp[0];
                 cube[0][2][1] = temp[1];
                 cube[0][2][2] = temp[2];
-
             }
 
             break;
@@ -163,9 +154,7 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[4][0][0] = temp[0];
                 cube[4][1][0] = temp[1];
                 cube[4][2][0] = temp[2];
-
             } else {
-
                 temp[0] = cube[4][0][0];
                 temp[1] = cube[4][1][0];
                 temp[2] = cube[4][2][0];
@@ -185,12 +174,10 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[0][0][2] = temp[0];
                 cube[0][1][2] = temp[1];
                 cube[0][2][2] = temp[2];
-
             }
 
             break;
         case 4:
-
             if (strcmp(dir, "CLOCKWISE") == 0) {
                 temp[0] = cube[3][0][2];
                 temp[1] = cube[3][1][2];
@@ -204,14 +191,13 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[5][2][1] = cube[1][1][0];
                 cube[5][2][2] = cube[1][2][0];
 
-                cube[1][0][0] = cube[0][0][2];
-                cube[1][1][0] = cube[0][1][2];
-                cube[1][2][0] = cube[0][2][2];
+                cube[1][0][0] = cube[0][0][0];
+                cube[1][1][0] = cube[0][0][1];
+                cube[1][2][0] = cube[0][0][2];
 
                 cube[0][0][0] = temp[0];
                 cube[0][0][1] = temp[1];
                 cube[0][0][2] = temp[2];
-
             } else {
                 temp[0] = cube[0][0][0];
                 temp[1] = cube[0][0][1];
@@ -232,13 +218,11 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[3][0][2] = temp[0];
                 cube[3][1][2] = temp[1];
                 cube[3][2][2] = temp[2];
-
             }
 
             break;
 
         case 5:
-
             if (strcmp(dir, "CLOCKWISE") == 0) {
                 temp[0] = cube[4][2][0];
                 temp[1] = cube[4][2][1];
@@ -267,7 +251,6 @@ void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
                 cube[4][2][0] = temp[0];
                 cube[4][2][1] = temp[1];
                 cube[4][2][2] = temp[2];
-
 
             }
 
