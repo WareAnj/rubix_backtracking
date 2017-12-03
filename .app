@@ -1,6 +1,3 @@
 reset
-cd src
-gcc app.c -o app.out &
-mv app.out ../out &
-cd ../out &
-./app.out
+gcc src/app.c -o out/app.out
+./out/app.out
