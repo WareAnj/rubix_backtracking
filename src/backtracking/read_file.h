@@ -9,6 +9,7 @@ void read_file (int rubixcube[6][3][3]) {
     FILE * fp;
 
     fp = fopen("../res/input.txt", "r");
+
     while (!feof(fp)) {
         for (j = 0; j < 3; j++) {
             fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
