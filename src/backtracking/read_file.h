@@ -3,14 +3,12 @@
 
 #include "convert.h"
 
-int read_file () {
-    int rubixcube[6][3][3];
+void read_file (int rubixcube[6][3][3]) {
     int i = 0, j = 0, k = 0;
     char temp1, temp2, temp3;
     FILE * fp;
 
-    fp = fopen("../../res/input.txt", "r");
-
+    fp = fopen("../res/input.txt", "r");
     while (!feof(fp)) {
         if (i == 0) {
             for (j = 0; j < 3; j++) {
@@ -104,6 +102,4 @@ int read_file () {
     }
 
     fclose(fp);
-
-    return rubixcube;
 }

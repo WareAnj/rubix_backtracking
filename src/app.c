@@ -4,9 +4,9 @@
 #include <time.h>
 
 #include "backtracking/print.h"
-#include "backtracking/convert.h"
 #include "backtracking/rotate_cube.h"
 #include "backtracking/check.h"
+#include "backtracking/read_file.h"
 
 #define N 6 //min number of steps
 #define faces 6
@@ -26,111 +26,10 @@ int i, j, k, candidate;
  **/
 
 int main() {
-
     int rubixcube[6][3][3]; //3D array
-    int i = 0, j = 0, k = 0, direction, face;
-    char temp1, temp2, temp3;
-    FILE * fp;
-
-    fp = fopen("../res/input.txt", "r");
-
-
-    while (!feof(fp)) {
-
-
-        if (i == 0) {
-            for (j = 0; j < 3; j++) {
-                fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
-
-                rubixcube[i][j][0] = (int) temp1;
-                rubixcube[i][j][1] = (int) temp2;
-                rubixcube[i][j][2] = (int) temp3;
-
-                convert( & rubixcube[i][j][0]);
-                convert( & rubixcube[i][j][1]);
-                convert( & rubixcube[i][j][2]);
-            }
-            i++;
-        }
-        if (i == 1) {
-            for (j = 0; j < 3; j++) {
-                fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
-
-                rubixcube[i][j][0] = (int) temp1;
-                rubixcube[i][j][1] = (int) temp2;
-                rubixcube[i][j][2] = (int) temp3;
-
-                convert( & rubixcube[i][j][0]);
-                convert( & rubixcube[i][j][1]);
-                convert( & rubixcube[i][j][2]);
-            }
-            i++;
-
-        }
-        if (i == 2) {
-            for (j = 0; j < 3; j++) {
-                fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
-
-                rubixcube[i][j][0] = (int) temp1;
-                rubixcube[i][j][1] = (int) temp2;
-                rubixcube[i][j][2] = (int) temp3;
-
-                convert( & rubixcube[i][j][0]);
-                convert( & rubixcube[i][j][1]);
-                convert( & rubixcube[i][j][2]);
-            }
-            i++;
-
-        }
-        if (i == 3) {
-            for (j = 0; j < 3; j++) {
-                fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
-
-                rubixcube[i][j][0] = (int) temp1;
-                rubixcube[i][j][1] = (int) temp2;
-                rubixcube[i][j][2] = (int) temp3;
-
-                convert( & rubixcube[i][j][0]);
-                convert( & rubixcube[i][j][1]);
-                convert( & rubixcube[i][j][2]);
-            }
-            i++;
-
-        }
-        if (i == 4) {
-            for (j = 0; j < 3; j++) {
-                fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
-
-                rubixcube[i][j][0] = (int) temp1;
-                rubixcube[i][j][1] = (int) temp2;
-                rubixcube[i][j][2] = (int) temp3;
-
-                convert( & rubixcube[i][j][0]);
-                convert( & rubixcube[i][j][1]);
-                convert( & rubixcube[i][j][2]);
-            }
-            i++;
-
-        }
-        if (i == 5) {
-            for (j = 0; j < 3; j++) {
-                fscanf(fp, "%c%c%c\n", & temp1, & temp2, & temp3);
-
-                rubixcube[i][j][0] = (int) temp1;
-                rubixcube[i][j][1] = (int) temp2;
-                rubixcube[i][j][2] = (int) temp3;
-
-                convert( & rubixcube[i][j][0]);
-                convert( & rubixcube[i][j][1]);
-                convert( & rubixcube[i][j][2]);
-            }
-            i++;
-
-        }
-    }
-
-    fclose(fp);
-
+    int direction, face;
+    
+    read_file(rubixcube);
 
     while (1) {
 
