@@ -20,4 +20,4 @@ int check(int cube[6][3][3]) {
 
 	printf("\n--CUBE SOLVED!--\n");
 	return true;
-};
+}
