@@ -4,9 +4,9 @@
 #include <time.h>
 
 #include "backtracking/print.h"
-#include "backtracking/rotate_cube.h"
+#include "backtracking/rotateCube.h"
 #include "backtracking/check.h"
-#include "backtracking/read_file.h"
+#include "backtracking/readFile.h"
 
 #define N 6 //min number of steps
 #define faces 6
@@ -29,7 +29,7 @@ int main() {
     int rubixcube[6][3][3]; //3D array
     int direction, face;
     
-    read_file(rubixcube);
+    readFile(rubixcube);
 
     while (1) {
 
@@ -43,10 +43,10 @@ int main() {
         scanf("%d", & direction);
 
         if (direction == 1) {
-            rotate_cube(rubixcube, face, "CLOCKWISE");
+            rotateCube(rubixcube, face, "CLOCKWISE");
             printf("\n\t\tCLOCKWISE\n");
         } else if (direction == 2) {
-            rotate_cube(rubixcube, face, "!CLOCKWISE");
+            rotateCube(rubixcube, face, "!CLOCKWISE");
             printf("\n\t\tCOUNTER-CLOCKWISE\n");
         } else printf("No direction chosen! \n");
         

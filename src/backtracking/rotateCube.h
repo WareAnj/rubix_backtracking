@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void rotate_cube(int cube[6][3][3], int face, char dir[18]) {
+void rotateCube(int cube[6][3][3], int face, char dir[18]) {
     int i, temp[3];
 
     switch (face) {

@@ -4,8 +4,9 @@
         "*.master": "html",
         "*.tpl.js": "html",
         "convert.h": "c",
-        "rotate_cube.h": "c",
+        "rotateCube.h": "c",
         "check.h": "c",
-        ".app": "shellscript"
+        ".app": "shellscript",
+        "readFile.h": "c"
     }
 }

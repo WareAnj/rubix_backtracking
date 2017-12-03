@@ -3,7 +3,7 @@
 
 #include "convert.h"
 
-void read_file (int rubixcube[6][3][3]) {
+void readFile (int rubixcube[6][3][3]) {
     int i = 0, j = 0, k = 0;
     char temp1, temp2, temp3;
     FILE * fp;
