@@ -5,6 +5,7 @@
         "*.tpl.js": "html",
         "convert.h": "c",
         "rotate_cube.h": "c",
-        "check.h": "c"
+        "check.h": "c",
+        ".app": "shellscript"
     }
 }
