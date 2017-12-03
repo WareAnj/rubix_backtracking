@@ -1,3 +1,4 @@
+reset
 cd src
 gcc app.c -o app.out &
 mv app.out ../out &
