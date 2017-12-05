@@ -205,8 +205,8 @@ transform: scale(1.2,1.2);
     padding-top: 16px;
     padding-left: 25px;
 
-    font-weight: bold;
-    color: lightgreen;
+    font-weight: bolder;
+    color: black;
 
     background-color: rgb(35, 35, 35)
 }
@@ -235,7 +235,7 @@ transform: scale(1.2,1.2);
     border: 1px solid black;
 }
 
-#read-file {
+.black-cont {
     width: 100%;
 
     padding: 20px;

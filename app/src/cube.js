@@ -80,7 +80,20 @@ cube.update = () => {
     for (let i = 0; i < 6; i += 1) {
         for (let j = 0; j < 3; j += 1) {
             for (let k = 0; k < 3; k += 1) {
-                $('.face-' + i + ' .rubik-box.row-' + j + '.cell-' + k).text(cube.data[i][j][k])
+                let color_code = cube.data[i][j][k]
+                let color_val
+                switch (color_code) {
+                    case 0:     color_val = 'white'; break
+                    case 1:     color_val = 'red'; break
+                    case 2:     color_val = 'blue'; break
+                    case 3:     color_val = 'orange'; break
+                    case 4:     color_val = 'green'; break
+                    case 5:     color_val = 'yellow'; break
+                    default:    color_val = 'white'; break
+                }
+                $('.face-' + i + ' .rubik-box.row-' + j + '.cell-' + k)
+                    .css('background-color', color_val)
+                    .text(cube.data[i][j][k])
             }
         }
     }
