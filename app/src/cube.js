@@ -92,8 +92,11 @@ cube.update = () => {
                     default:    color_val = 'white'; break
                 }
                 $('.face-' + i + ' .rubik-box.row-' + j + '.cell-' + k)
+                    .hide()
+                    .delay(0)
                     .css('background-color', color_val)
                     .text(cube.data[i][j][k])
+                    .fadeIn()
             }
         }
     }
