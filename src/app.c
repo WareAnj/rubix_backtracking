@@ -9,6 +9,7 @@
 #include "backtracking/check.h"
 
 #define N 12 //min number of steps
+#define maxmoves 6
 #define faces 6
 #define row 3
 #define col 3
@@ -134,20 +135,22 @@ int main() {
 
         print(rubixcube);
 
-/*
-w1 - w cw - 0, CLOCKWISE
-w2 - w cc - 0
-r1 - r cw - 1, CLOCKWISE 
-r2 - r cc - 1
-b1 - b cw - 2, CLOCKWISE
-b2 - b cc - 2
-o1 - o cw - 3, CLOCKWISE
-o2 - o cc - 3
-g1 - g cw - 4, CLOCKWISE
-g2 - g cc - 4
-y1 - y cw - 5, CLOCKWISE
-y2 - y cc - 5
-*/
+                /*
+                Legend
+                w1 - w cw - 0, CLOCKWISE
+                w2 - w cc - 0
+                r1 - r cw - 1, CLOCKWISE 
+                r2 - r cc - 1
+                b1 - b cw - 2, CLOCKWISE
+                b2 - b cc - 2
+                o1 - o cw - 3, CLOCKWISE
+                o2 - o cc - 3
+                g1 - g cw - 4, CLOCKWISE
+                g2 - g cc - 4
+                y1 - y cw - 5, CLOCKWISE
+                y2 - y cc - 5
+                */
+
     int savestate[6][3][3];
     int start, move;
     int nopts[N+2]; //array of top of stacks
@@ -268,14 +271,84 @@ y2 - y cc - 5
 
                     //print(rubixcube);
 
-                    if(check(rubixcube) == 1){
+                    if(check(rubixcube) == true){
+                        //printf(": %d\n", move);
                         //return the 'moves'
+                        
                         for(i = 0;i < move;i++){
+                            
+                            if( option[i][nopts[i]] == 1){
+                                //printf("w cw \n");
+                               printf("Move %d: rotateCube(cube, WHITE, CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 2){
+                                //printf("w cc \n");
+                               printf("Move %d: rotateCube(cube, WHITE, !CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 3){
+                                //printf("r cw \n");
+                               printf("Move %d: rotateCube(cube, RED, CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 4){
+                                //printf("r cc \n");
+                               printf("Move %d: rotateCube(cube, RED, !CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 5){
+                                //printf("b cw \n");
+                               printf("Move %d: rotateCube(cube, BLUE, CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 6){
+                                //printf("b cc \n");
+                               printf("Move %d: rotateCube(cube, BLUE, !CLOCLWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 7){
+                                //printf("o cw \n");
+                               printf("Move %d: rotateCube(cube, ORANGE, CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 8){
+                                //printf("o cc \n");
+                               printf("Move %d: rotateCube(cube, ORANGE, !CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 9){
+                                //printf("g cw \n");
+                               printf("Move %d: rotateCube(cube, GREEN, CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 10){
+                                //printf("g cc \n");
+                               printf("Move %d: rotateCube(cube, GREEN, !CLOCKWISE)", i);
+                            }
+
+                            if(option[i][nopts[i]] == 11){
+                                //printf("y cw \n");
+                               printf("Move %d: rotateCube(cube, YELLOW, CLOCKWISE)\n", i);
+                            }
+
+                            if(option[i][nopts[i]] == 12){
+                                //printf("y cc \n");
+                               printf("Move %d: rotateCube(cube, YELLOW, !CLOCKWISE)\n", i);
+                            } 
+                            //sleep(1000);
+                                              
                         }
                         
+                        printf(">SOLUTION FOUND<");
                         print(rubixcube);
-                        printf("SOLVED");
-                        sleep(1000);
+                        //printf("option[i][nopts[i]]: %d\n ", option[1][nopts[1]]);
+                        //printf("option[i][nopts[i]]: %d\n ", option[2][nopts[2]]);
+                        //printf("option[i][nopts[i]]: %d\n ", option[3][nopts[3]]);
+                        //printf("option[i][nopts[i]]: %d\n ", option[4][nopts[4]]);
+                        //printf("option[i][nopts[i]]: %d\n ", option[5][nopts[5]]);
+
+                        return 0;
                     }
 
                     else{
