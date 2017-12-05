@@ -103,3 +103,25 @@ cube.rotate = (face, direction) => {
     cube.data = moveCube(cube.data, face, direction)
     cube.update()
 }
+
+cube.check = () => {
+    let i, j, k
+    for (i = 0; i < 6; i++) {
+        if (i == 0) {
+            for (j = 0; j < 3; j++) {
+                for (k = 0; k < 3; k++) {
+                    if (cube.data[i][j][k] != i) {
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+
+    console.log("\n--CUBE SOLVED!--\n")
+    return true
+}
+
+cube.solve = () => {
+
+}

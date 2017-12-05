@@ -35,3 +35,7 @@ $('.face-event-5').on('click', () => {
 $('.face-event').on('click', () => {
     cube.rotate(face_event, dir)
 })
+
+$('.solve-cube').on('click', () => {
+    cube.solve()
+})
