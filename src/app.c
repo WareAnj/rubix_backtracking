@@ -30,7 +30,8 @@ int main() {
     int direction, face;
     
     readFile(rubixcube);
-    if (!check(rubixcube)) {
-        solve();
-    }
+    print(rubixcube);
+    // if (!check(rubixcube)) {
+    //     solve();
+    // }
 }

@@ -199,8 +199,14 @@ transform: scale(1.2,1.2);
 
 .rubik-box {
     width: 100%;
-    padding-top: 100%;
+    height: 50px;
     margin: 1px;
+
+    padding-top: 16px;
+    padding-left: 25px;
+
+    font-weight: bold;
+    color: lightgreen;
 
     background-color: rgb(35, 35, 35)
 }
