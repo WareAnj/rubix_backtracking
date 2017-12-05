@@ -5,6 +5,21 @@ cube.init = () => {
     cube.data = {}
 }
 
+cube.move_list = {
+    0:  {'face': 0, 'direction': 0},
+    1:  {'face': 1, 'direction': 0},
+    2:  {'face': 2, 'direction': 0},
+    3:  {'face': 3, 'direction': 0},
+    4:  {'face': 4, 'direction': 0},
+    5:  {'face': 5, 'direction': 0},
+    6:  {'face': 0, 'direction': 1},
+    7:  {'face': 1, 'direction': 1},
+    8:  {'face': 2, 'direction': 1},
+    9:  {'face': 3, 'direction': 1},
+    10: {'face': 4, 'direction': 1},
+    11: {'face': 5, 'direction': 1}
+}
+
 cube.read = (data) => {
     let seq = [
         0,
@@ -107,24 +122,39 @@ cube.rotate = (face, direction) => {
     cube.update()
 }
 
-cube.check = () => {
+cube.set = (face, direction) => {
+    cube._face = face
+    cube._direction = direction
+}
+
+cube.exec = () => {
+    cube.rotate(cube._face, cube._direction)
+}
+
+cube.check = (CHECK_ALL) => {
     let i, j, k
-    for (i = 0; i < 6; i++) {
-        if (i == 0) {
-            for (j = 0; j < 3; j++) {
-                for (k = 0; k < 3; k++) {
-                    if (cube.data[i][j][k] != i) {
-                        return false;
+
+    if (CHECK_ALL) {
+        for (i = 0; i < 6; i++) {
+            if (i == 0) {
+                for (j = 0; j < 3; j++) {
+                    for (k = 0; k < 3; k++) {
+                        if (cube.data[i][j][k] != i) {
+                            return false;
+                        }
                     }
                 }
             }
         }
-    }
 
-    console.log("\n--CUBE SOLVED!--\n")
-    return true
+        console.log("\n--CUBE SOLVED!--\n")
+        return true
+    } else return (face, direction) => {
+
+    }
 }
 
 cube.solve = () => {
     if (!cube.check()) return // should apply needed rotations
+
 }
