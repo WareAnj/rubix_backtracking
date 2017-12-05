@@ -14,6 +14,7 @@ void solveCube (int rubixcube[6][3][3]) {
     int candidate;
     int num = 0;
     int n, m;
+    int i, j, k;
 
     for(i = 0; i < 6; i++){
         for(j = 0; j < 3; j++){
@@ -126,7 +127,7 @@ void solveCube (int rubixcube[6][3][3]) {
                         for(i = 0;i < move;i++){
 	                        if(option[i][nopts[i]] == 1){
 	                            //printf("w cw \n");
-	                           printf("Move %d: rotateCube(cube, WHITE, CLOCKWISE)", i)
+	                           printf("Move %d: rotateCube(cube, WHITE, CLOCKWISE)", i);
 	                        }
 
 	                        if(option[i][nopts[i]] == 2){
@@ -136,19 +137,17 @@ void solveCube (int rubixcube[6][3][3]) {
 
 	                        if(option[i][nopts[i]] == 3){
 	                            //printf("r cw \n");
-	                           printf("Move %d: rotateCube(cube, RED, CLOCKWISE)", i)
-
+	                           printf("Move %d: rotateCube(cube, RED, CLOCKWISE)", i);
 	                        }
 
 	                        if(option[i][nopts[i]] == 4){
 	                            //printf("r cc \n");
 	                           printf("Move %d: rotateCube(cube, RED, !CLOCKWISE)", i);
-
 	                        }
 
 	                        if(option[i][nopts[i]] == 5){
 	                            //printf("b cw \n");
-	                           printf("Move %d: rotateCube(cube, BLUE, CLOCKWISE)", i)
+	                           printf("Move %d: rotateCube(cube, BLUE, CLOCKWISE)", i);
 	                        }
 
 	                        if(option[i][nopts[i]] == 6){
@@ -158,8 +157,7 @@ void solveCube (int rubixcube[6][3][3]) {
 
 	                        if(option[i][nopts[i]] == 7){
 	                            //printf("o cw \n");
-	                           printf("Move %d: rotateCube(cube, ORANGE, CLOCKWISE)", i)
-
+	                           printf("Move %d: rotateCube(cube, ORANGE, CLOCKWISE)", i);
 	                        }
 
 	                        if(option[i][nopts[i]] == 8){
@@ -169,7 +167,7 @@ void solveCube (int rubixcube[6][3][3]) {
 
 	                        if(option[i][nopts[i]] == 9){
 	                            //printf("g cw \n");
-	                           printf("Move %d: rotateCube(cube, GREEN, CLOCKWISE)", i)
+	                           printf("Move %d: rotateCube(cube, GREEN, CLOCKWISE)", i);
 	                        }
 
 	                        if(option[i][nopts[i]] == 10){
@@ -179,7 +177,7 @@ void solveCube (int rubixcube[6][3][3]) {
 
 	                        if(option[i][nopts[i]] == 11){
 	                            //printf("y cw \n");
-	                           printf("Move %d: rotateCube(cube, YELLOW, CLOCKWISE)", i)
+	                           printf("Move %d: rotateCube(cube, YELLOW, CLOCKWISE)", i);
 	                        }
 
 	                        if(option[i][nopts[i]] == 12){
