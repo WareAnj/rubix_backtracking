@@ -21,9 +21,12 @@
         <link rel="stylesheet" href="public/styles/style.css" type="text/css" media="all" />
 
         <!-- 3D builder  -->
+        <!-- <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="rubik-builder/style.css"></link>  
+        <link rel="stylesheet" href="rubik-builder/rubik.css"></link>  
         <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
         <script src="rubik-builder/rubik.js"></script>
-        <script src="rubik-builder/message-scroll.js"></script>
+        <script src="rubik-builder/message-scroll.js"></script> -->
     </head>
     <body>
         <div class="solid-color" style="background:#325532;"></div>
@@ -229,12 +232,10 @@
                     </div>
                 </div>
             </section>
-            <section id="rubik">
+            <!-- <section id="rubik">
                 <div id="cube-container">
                     <div id="cube-viewport">
                         <div id="cube">
-                            <!-- UP FACE -->
-                            <!-- LEFT COLUMN (L)  -->
                             <div class="utl cubie up LM UE BS">
                                 <div><span>U1</span></div>
                             </div>
@@ -244,7 +245,6 @@
                             <div class="ubl cubie up LM UE FS">
                                 <div><span>U3</span></div>
                             </div>
-                            <!-- CENTER COLUMN (C)  -->
                             <div class="utc cubie up CM UE BS">
                                 <div><span>U4</span></div>
                             </div>
@@ -254,7 +254,6 @@
                             <div class="ubc cubie up CM UE FS">
                                 <div><span>U6</span></div>
                             </div>
-                            <!-- RIGHT COLUMN (R)  -->
                             <div class="utr cubie up RM UE BS">
                                 <div><span>U7</span></div>
                             </div>
@@ -264,10 +263,7 @@
                             <div class="ubr cubie up RM UE FS">
                                 <div><span>U9</span></div>
                             </div>
-                            <!-- END UP FACE -->
 
-                            <!-- FRONT FACE -->
-                            <!-- LEFT COLUMN (L)  -->
                             <div class="ftl cubie front LM UE FS">
                                 <div><span>F1</span></div>
                             </div>
@@ -277,7 +273,7 @@
                             <div class="fbl cubie front LM DE FS">
                                 <div><span>F3</span></div>
                             </div>
-                            <!-- CENTER COLUMN (C)  -->
+
                             <div class="ftc cubie front CM UE FS">
                                 <div><span>F4</span></div>
                             </div>
@@ -287,7 +283,7 @@
                             <div class="fbc cubie front CM DE FS">
                                 <div><span>F6</span></div>
                             </div>
-                            <!-- RIGHT COLUMN (R)  -->
+
                             <div class="ftr cubie front RM UE FS">
                                 <div><span>F7</span></div>
                             </div>
@@ -297,10 +293,7 @@
                             <div class="fbr cubie front RM DE FS">
                                 <div><span>F9</span></div>
                             </div>
-                            <!-- END FRONT FACE -->
 
-                            <!--DOWN FACE -->
-                            <!-- LEFT COLUMN (L)  -->
                             <div class="dtl cubie down LM DE FS">
                                 <div><span>D1</span></div>
                             </div>
@@ -310,7 +303,7 @@
                             <div class="dbl cubie down LM DE BS">
                                 <div><span>D3</span></div>
                             </div>
-                            <!-- CENTER COLUMN (C)  -->
+
                             <div class="dtc cubie down CM DE FS">
                                 <div><span>D4</span></div>
                             </div>
@@ -320,7 +313,7 @@
                             <div class="dbc cubie down CM DE BS">
                                 <div><span>D6</span></div>
                             </div>
-                            <!-- RIGHT COLUMN (R)  -->
+
                             <div class="dtr cubie down RM DE FS">
                                 <div><span>D7</span></div>
                             </div>
@@ -330,10 +323,7 @@
                             <div class="dbr cubie down RM DE BS">
                                 <div><span>D9</span></div>
                             </div>
-                            <!-- END DOWN FACE -->
 
-                            <!--BACK FACE -->
-                            <!-- LEFT COLUMN (L)  -->
                             <div class="btl cubie back LM DE BS">
                                 <div><span>B1</span></div>
                             </div>
@@ -343,7 +333,7 @@
                             <div class="bbl cubie back LM UE BS">
                                 <div><span>B3</span></div>
                             </div>
-                            <!-- CENTER COLUMN (C)  -->
+
                             <div class="btc cubie back CM DE BS">
                                 <div><span>B4</span></div>
                             </div>
@@ -353,7 +343,7 @@
                             <div class="bbc cubie back CM UE BS">
                                 <div><span>B6</span></div>
                             </div>
-                            <!-- RIGHT COLUMN (R)  -->
+
                             <div class="btr cubie back RM DE BS">
                                 <div><span>B7</span></div>
                             </div>
@@ -363,10 +353,7 @@
                             <div class="bbr cubie back RM UE BS">
                                 <div><span>B9</span></div>
                             </div>
-                            <!--END BOTTOM FACE -->
 
-                            <!--LEFT FACE -->
-                            <!-- LEFT COLUMN (L)  -->
                             <div class="ltl cubie left LM UE BS">
                                 <div><span>L1</span></div>
                             </div>
@@ -376,7 +363,7 @@
                             <div class="lbl cubie left LM DE BS">
                                 <div><span>L3</span></div>
                             </div>
-                            <!-- CENTER COLUMN (C)  -->
+
                             <div class="ltc cubie left LM UE CS">
                                 <div><span>L4</span></div>
                             </div>
@@ -386,7 +373,7 @@
                             <div class="lbc cubie left LM DE CS">
                                 <div><span>L6</span></div>
                             </div>
-                            <!-- RIGHT COLUMN (R)  -->
+
                             <div class="ltr cubie left LM UE FS">
                                 <div><span>L7</span></div>
                             </div>
@@ -396,10 +383,7 @@
                             <div class="lbr cubie left LM DE FS">
                                 <div><span>L9</span></div>
                             </div>
-                            <!--END LEFT FACE -->
 
-                            <!--RIGHT FACE -->
-                            <!-- LEFT COLUMN (L)  -->
                             <div class="rtl cubie right RM UE FS">
                                 <div><span>R1</span></div>
                             </div>
@@ -409,7 +393,7 @@
                             <div class="rbl cubie right RM DE FS">
                                 <div><span>R3</span></div>
                             </div>
-                            <!-- CENTER COLUMN (C)  -->
+
                             <div class="rtc cubie right RM UE CS">
                                 <div><span>R4</span></div>
                             </div>
@@ -419,7 +403,7 @@
                             <div class="rbc cubie right RM DE CS">
                                 <div><span>R6</span></div>
                             </div>
-                            <!-- RIGHT COLUMN (R)  -->
+
                             <div class="rtr cubie right RM UE BS">
                                 <div><span>R7</span></div>
                             </div>
@@ -429,8 +413,6 @@
                             <div class="rbr cubie right RM DE BS">
                                 <div><span>R9</span></div>
                             </div>
-                            <!--END LEFT FACE -->
-
                         </div>
                     </div>
                 </div>
@@ -455,7 +437,7 @@
                         </div>
                     </section>
                 </aside>
-            </section>
+            </section> -->
             <footer class="container">
                 <div class="row">
                     <div class="col-md-12">
