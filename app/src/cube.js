@@ -117,7 +117,8 @@ cube.update = () => {
     }
 }
 
-cube.rotate = (face, direction) => {
+cube.rotate = (face, direction, data) => {
+    if (data) return moveCube(data, face, direction)
     cube.data = moveCube(cube.data, face, direction)
     cube.update()
 }
@@ -127,14 +128,14 @@ cube.set = (face, direction) => {
     cube._direction = direction
 }
 
-cube.exec = () => {
-    cube.rotate(cube._face, cube._direction)
+cube.exec = (data) => {
+    return cube.rotate(cube._face, cube._direction, data)
 }
 
-cube.check = (CHECK_ALL) => {
+cube.check = (data) => {
     let i, j, k
 
-    if (CHECK_ALL) {
+    if (typeof data == 'boolean' && data) {
         for (i = 0; i < 6; i++) {
             if (i == 0) {
                 for (j = 0; j < 3; j++) {
@@ -149,8 +150,30 @@ cube.check = (CHECK_ALL) => {
 
         console.log("\n--CUBE SOLVED!--\n")
         return true
-    } else return (face, direction) => {
+    } else return (data) => {
+        cube.set(data.face, data.direction)
 
+        let old_info = cube.data
+        let new_info = cube.exec(cube.data)
+
+        for (i = 0; i < 6; i++) {
+            for (j = 0; j < 3; j++) {
+                for (k = 0; k < 3; k++) {
+                    if (new_info[0][1][1] != 0) return false // can never happen
+
+                    // going away from white cross
+                    if (Math.abs(j - k) == 1) {
+                        if (new_info[0][j][k] != 0 && old_info[0][j][k] == 0) {
+                            if (1 /*should check if edges of white cross is not valid*/) {
+                                return false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return true // push to backtracking table
     }
 }
 
