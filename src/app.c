@@ -5,16 +5,15 @@
 
 #include "backtracking/print.h"
 #include "backtracking/convert.h"
-#include "backtracking/rotate_cube.h"
+#include "backtracking/rotateCube.h"
 #include "backtracking/check.h"
 
-#define N 6 //min number of steps
+#define N 12 //min number of steps
 #define faces 6
 #define row 3
 #define col 3
 #define true 1
 #define false 0
-int i, j, k, candidate;
 /** 
  * GROUP Y - CMSC 142 C-2L
  * 
@@ -132,94 +131,192 @@ int main() {
     fclose(fp);
 
 
-    while (1) {
 
         print(rubixcube);
-       
-        /*
 
-        int moves[faces+2][faces+2];    //last index is for direction
-        int tos_moves[N+2]; //top of stack of moves/faces to be moved
-        int dir_moves[N+2]; //top of stack of moves/faces to be moved
-        int move, start;
+/*
+w1 - w cw - 0, CLOCKWISE
+w2 - w cc - 0
+r1 - r cw - 1, CLOCKWISE 
+r2 - r cc - 1
+b1 - b cw - 2, CLOCKWISE
+b2 - b cc - 2
+o1 - o cw - 3, CLOCKWISE
+o2 - o cc - 3
+g1 - g cw - 4, CLOCKWISE
+g2 - g cc - 4
+y1 - y cw - 5, CLOCKWISE
+y2 - y cc - 5
+*/
+    int savestate[6][3][3];
+    int start, move;
+    int nopts[N+2]; //array of top of stacks
+    int option[N+2][N+2]; //array of stacks of options
+    int candidate;
+    int num = 0;
+    int n, m;
 
-        move = start = 0;
-        tos_moves[start] = 1;   //dummy stack
-        dir_moves[start] = 0;   //dummy stack
 
-        while(tos_moves[start] > 0){ //dummy stack is not empty
-            if(tos_moves[move] > 0){
+
+    for(i = 0; i < 6; i++){
+        for(j = 0; j < 3; j++){
+            for(k = 0; k < 3;k++){
+                savestate[i][j][k] = rubixcube[i][j][k];
+            }
+        }
+    }
+
+
+    for(n = 1; n <= 5;n++){
+        move = start = 0; 
+        nopts[start]= 1;
+        while (nopts[start] >0){//while dummy stack is not empty
+            if(nopts[move]>0){
+                
+
                 move++;
-                tos_moves[move] = 0; 
-                if(move != N+1){    //populate table
-                    if(dir_moves[move] == 0){
-                         dir_moves[move] = 2; //set direction
-                    }
-                   
-                    for(candidate = N-1; candidate >=0; candidate --) {
-                        tos_moves[move]++;
-                        moves[move][tos_moves[move]] = candidate;        
-                    }
+                nopts[move]=0; //initialize new move            
 
-                }
-                else{
-                    //rotate_cube(int cube[6][3][3], int face, char dir[18])
+                if(move==n+1){ //solution found!
+
+                    /*
+                    w1 - w cw - 0, CLOCKWISE
+                    w2 - w cc - 0
+                    r1 - r cw - 1, CLOCKWISE 
+                    r2 - r cc - 1
+                    b1 - b cw - 2, CLOCKWISE
+                    b2 - b cc - 2
+                    o1 - o cw - 3, CLOCKWISE
+                    o2 - o cc - 3
+                    g1 - g cw - 4, CLOCKWISE
+                    g2 - g cc - 4
+                    y1 - y cw - 5, CLOCKWISE
+                    y2 - y cc - 5
+                    */
+                        
+
+                    //printf("\nMOVE:%d\n",move);
+                    //sleep(1);
+                    //print(rubixcube); //REMOVE
                     
                     for(i=1;i<move;i++){
-                         printf("Side: %d direction: %d \n", moves[i][tos_moves[i]],dir_moves[i]);
-                        if(dir_moves[i] == 2){  //clockwise
-                            rotate_cube(rubixcube, moves[i][tos_moves[i]], "!CLOCKWISE");
+                        if(option[i][nopts[i]] == 1){
+                            printf("w cw \n");
+                            rotateCube(rubixcube, 0, "CLOCKWISE");
                         }
-                        
-                        else{   //counter-clockwise
-                            rotate_cube(rubixcube, moves[i][tos_moves[i]], "CLOCKWISE");
-                        }   
+
+                        if(option[i][nopts[i]] == 2){
+                            printf("w cc \n");
+                            rotateCube(rubixcube, 0, "!CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 3){
+                            printf("r cw \n");
+                            rotateCube(rubixcube, 1, "CLOCKWISE");
+
+                        }
+
+                        if(option[i][nopts[i]] == 4){
+                            printf("r cc \n");
+                            rotateCube(rubixcube, 1, "!CLOCKWISE");
+
+                        }
+
+                        if(option[i][nopts[i]] == 5){
+                            printf("b cw \n");
+                            rotateCube(rubixcube, 2, "CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 6){
+                            printf("b cc \n");
+                            rotateCube(rubixcube, 2, "!CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 7){
+                            printf("o cw \n");
+                            rotateCube(rubixcube, 3, "CLOCKWISE");
+
+                        }
+
+                        if(option[i][nopts[i]] == 8){
+                            printf("o cc \n");
+                            rotateCube(rubixcube, 3, "!CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 9){
+                            printf("g cw \n");
+                            rotateCube(rubixcube, 4, "CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 10){
+                            printf("g cc \n");
+                            rotateCube(rubixcube, 4, "!CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 11){
+                            printf("y cw \n");
+                            rotateCube(rubixcube, 5, "CLOCKWISE");
+                        }
+
+                        if(option[i][nopts[i]] == 12){
+                            printf("y cc \n");
+                            rotateCube(rubixcube, 5, "!CLOCKWISE");
+                        }
                     }
+
+                        //printf("%2i",option[i][nopts[i]]);
+
+                    //print(rubixcube);
+
                     if(check(rubixcube) == 1){
-
-                        return;
-                    }
-                    //undo the rotations if answer not found
-                    for(i=move-1;i>=1;i--){
-                    
-                        if(dir_moves[i] == 2){  //clockwise
-                            rotate_cube(rubixcube, moves[i][tos_moves[i]], "CLOCKWISE");
+                        //return the 'moves'
+                        for(i = 0;i < move;i++){
                         }
                         
-                        else{   //counter-clockwise
-                            rotate_cube(rubixcube, moves[i][tos_moves[i]], "CLOCKWISE");
+                        print(rubixcube);
+                        printf("SOLVED");
+                        sleep(1000);
                     }
-                    print(rubixcube);   
-                }    
-                    //check if solved, else back track
-                }
-            }
 
-            else{   
-                if(tos_moves[move] == 0){
-                    sleep(10);
-                    printf("PASS\n");
-                    if(move != 0){
-                        if(tos_moves[move] == 0){
-                            move--;//move to next
-                        }
-                        tos_moves[move]--;
-                    }    
-            }
-                else{
-                    if(dir_moves[move] == 1){
-                        move--;
-                        tos_moves[move]--;
-                    }
                     else{
-                        dir_moves[move]--;
-                    }   
+                        //UNDO MOVES
+                            for(i = 0; i < 6; i++){
+                                for(j = 0; j < 3; j++){
+                                    for(k = 0; k < 3;k++){
+                                        rubixcube[i][j][k] = savestate[i][j][k];
+                                    }
+                                }
+                            }
+                    }
+
+                    num++;
+                    printf("---------------------------------------------\n");
+                    //dirpts[move]--;
+                }
+                else { //populates options
+                    for(candidate = N; candidate >=1; candidate --) {
+                        nopts[move]++;
+                        option[move][nopts[move]] = candidate;
+                        //printf("nopts[move] %i candidate %i:\n", nopts[move], candidate);           
+                    }
                 }
 
-            }   
+            }
+            else {
+                move--;
+                nopts[move]--;  
+                
+                
+            }
         }
-        */
 
+        printf("\n--  NEW --\n");
+    }
+    
+}
+
+
+    /*    
 
 
         printf("\n");
@@ -238,7 +335,7 @@ int main() {
         } else printf("No direction chosen! \n");
         
 
-    }
+    */
 
 
-}
+
