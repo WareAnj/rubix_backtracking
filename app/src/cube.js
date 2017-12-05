@@ -123,5 +123,5 @@ cube.check = () => {
 }
 
 cube.solve = () => {
-
+    if (!cube.check()) return // should apply needed rotations
 }
