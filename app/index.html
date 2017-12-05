@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Chronos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="public/images/favicon.ico">
+        <link rel="stylesheet" href="public/styles/bootstrap/css/bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="public/styles/supersized.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="public/styles/style.css" type="text/css" media="all" />
+    </head>
+    <body>
+        <div class="solid-color" style="background:#325532;"></div>
+        <div class="main">
+            <header class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="logo-title alignc"><b>Chronos</b>: Rubik's Cube Solver</h1>
+                        <div id="page-intro" class="row">
+                            <!--  FILE INPUT -->
+                            <form onsubmit="return false" id="read-file">
+                                <div class="form-group">
+                                    <label for="file_name">Path to input file</label>
+                                    <input type="file" class="form-control-file" id="file_name">
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Read">
+                            </form>
+                            <div id="cube">
+                                <div class="col-sm-3">
+                                    <div class="face clear">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face clear">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="face">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="face clear">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face clear">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="face clear">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                    <div class="face clear">
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                        <div class="col-sm-4"><div class="rubik-box"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <h3 class="title"> A CMSC 142 Project</h3>
+                        <p>This application is a 3x3x3 Rubik's Cube Solver using backtracking.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-md-offset-1">
+                        <div id="subscribe-contact"></div>
+                        <h5 class="sub-title margin-t34">Authors</h5>
+                        <div class="row margin-t22 contact">
+                            <div class="col-sm-6 col-md-6">
+                                <p>
+                                    Menguito, Aleck <br>
+                                    Milano, Angelo <br>
+                                    Ware, Angelica
+                                </p>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+                </div>
+            </section>
+            <footer class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="footer-social alignc">
+                            <li><a href="http://www.github.com/WareAnj/rubix_project" target="_blank"><i class="fa fa-github"></i></a></li>
+                        </ul>
+                        <p class="foo-copyright alignc"><a href="http://www.github.com/WareAnj/rubix_project">Link going to the project</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script type='text/javascript' src='public/scripts/jquery.min.js'></script>
+        <script type='text/javascript' src='public/styles/bootstrap/js/bootstrap.min.js'></script>
+        <script type='text/javascript' src='public/scripts/supersized.3.2.7.min.js'></script>
+        <script type='text/javascript' src='public/scripts/jquery.lwtCountdown.js'></script>
+        <script type='text/javascript' src='public/scripts/jquery.form.min.js'></script>
+        <script type='text/javascript' src='public/scripts/jquery.shell.js'></script>
+        <script type='text/javascript' src='public/scripts/subscribe-form.js'></script>
+        <script type='text/javascript' src='public/scripts/init.js'></script>
+        <script type='text/javascript' src='src/fileRead.js'></script>
+    </body>
+</html>
