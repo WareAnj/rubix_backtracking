@@ -116,12 +116,13 @@ void solveCube (int rubixcube[6][3][3]) {
                         }
                     }
 
-                    //printf("%2i",option[i][nopts[i]]);
-
-                    //print(rubixcube);
 
                     if(check(rubixcube) == 1){
                         //return the 'moves'
+                        //The list of moves are all the
+                        //values of option[i][nopts[i]]
+                        // from i to move, where i is 0
+
                         for(i = 0;i < move;i++){
                             
                             if( option[i][nopts[i]] == 1){
@@ -183,7 +184,6 @@ void solveCube (int rubixcube[6][3][3]) {
                                 //printf("y cc \n");
                                printf("Move %d: rotateCube(cube, YELLOW, !CLOCKWISE)\n", i);
                             } 
-                            //sleep(1000);
                                               
                         }
                         
@@ -223,6 +223,5 @@ void solveCube (int rubixcube[6][3][3]) {
             }
         }
 
-        //printf("\n--  NEW --\n");
     }
 }
